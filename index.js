@@ -3,7 +3,9 @@ const cors = require('cors');
 const app = express();
 
 const collection = require('./database/index');
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:3000/',
+}));
 
 const PORT = 3001;
 app.listen(PORT, (req, res)=>{
