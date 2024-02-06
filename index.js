@@ -4,7 +4,7 @@ const app = express();
 
 const collection = require('./database/index');
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: 'https://navigatorsyouth.netlify.app/',
 }));
 
 const PORT = 3001;
