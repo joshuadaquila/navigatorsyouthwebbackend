@@ -10,6 +10,7 @@ require("./strategy/local");
 const collection = require('./database/index');
 app.use(cors({
   origin: ['https://navigatorsyouth.netlify.app', 'http://localhost:3000'],
+  credentials: true
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
