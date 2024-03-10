@@ -8,7 +8,9 @@ const userdb = require("./database/userdb");
 require("./strategy/local");
 
 const collection = require('./database/index');
-
+app.use(cors({
+  origin: ['https://navigatorsyouth.netlify.app', 'http://localhost:3000'],
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(session({
@@ -22,9 +24,7 @@ app.use(session({
 
 
 const passport = require('passport');
-app.use(cors({
-  origin: ['https://navigatorsyouth.netlify.app', 'http://localhost:3000'],
-}));
+
 
 
 const PORT = 3001;
