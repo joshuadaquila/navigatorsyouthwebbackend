@@ -23,9 +23,9 @@ app.use(session({
 
 const passport = require('passport');
 app.use(cors({
-  origin: 'http://localhost:3000',
-  credentials: true,
+  origin: ['https://navigatorsyouth.netlify.app', 'http://localhost:3000'],
 }));
+
 
 const PORT = 3001;
 app.listen(PORT, (req, res)=>{
