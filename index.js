@@ -10,6 +10,7 @@ require("./strategy/local");
 const collection = require('./database/index');
 app.use(cors({
   origin: ['https://navigatorsyouth.netlify.app', 'http://localhost:3000'],
+  credentials: true
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -60,14 +61,14 @@ app.post('/login', passport.authenticate('local'),(req, res) => {
   res.sendStatus(200);
 });
 app.use(passport.session());
-app.use((req, res, next)=>{
-  if(req.user){
-    console.log(req.user);
-    next();
-  }else{
-    res.sendStatus(401);
-  }
-});
+// app.use((req, res, next)=>{
+//   if(req.user){
+//     console.log(req.user);
+//     next();
+//   }else{
+//     res.sendStatus(401);
+//   }
+// });
 
 app.get('/', async (req, res)=>{
   res.send(req.user.username);
