@@ -78,7 +78,6 @@ app.get('/', async (req, res)=>{
 app.get('/feed', async (req,res)=>{
   try {
     const feed = await collection.find().toArray();
-    console.log(req.user.username);
     res.send(feed);
   } catch (error) {
     console.error(error); // Log any errors
