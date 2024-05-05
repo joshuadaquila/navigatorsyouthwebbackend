@@ -71,7 +71,7 @@ app.use(passport.session());
 // });
 
 app.get('/', async (req, res)=>{
-  res.send(req.user.username);
+  res.send("hehe");
 })
 
 
